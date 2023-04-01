@@ -26,6 +26,7 @@ export default class ManagerDuel extends cc.Component {
     private expectedB: string;
     private _timer: number;
     private _timerAI: number;
+    private gongSoundId: number;
 
     //#region Setters
     get timer(): number {
@@ -102,8 +103,9 @@ export default class ManagerDuel extends cc.Component {
         this.timer = this.timer - dt;
         if (this.timer === 0) {
             this.setupTimer();
+            SoundController.instance.playEffect(SoundController.instance.bell);
+            this.gongSoundId = SoundController.instance.playEffect(SoundController.instance.gong);
             this.setupTimerAI();
-            SoundController.instance.playEffect(SoundController.instance.promptGo);
             this.doWaitInput();
         }
     }
@@ -145,7 +147,10 @@ export default class ManagerDuel extends cc.Component {
 
         SoundController.instance.playEffect(SoundController.instance.promptHit);
         waitSeconds(0.2).then(() => SoundController.instance.playEffect(winnerSound));
-        waitSeconds(1.2).then(() => SoundController.instance.playEffect(SoundController.instance.celebWin));
+        waitSeconds(1.2).then(() => {
+            SoundController.instance.playEffect(SoundController.instance.celebWin);
+            SoundController.instance.stop(this.gongSoundId);
+        });
 
         this.animator.flash.opacity = 255;
         if (player1) {

@@ -21,7 +21,10 @@ export default class SoundController extends cc.Component {
     public effectFall2: cc.AudioClip = null;
   
     @property(cc.AudioClip)
-    public promptGo: cc.AudioClip = null;
+    public bell: cc.AudioClip = null;
+    
+    @property(cc.AudioClip)
+    public gong: cc.AudioClip = null;
 
     @property(cc.AudioClip)
     public promptHit: cc.AudioClip = null;
@@ -57,8 +60,8 @@ export default class SoundController extends cc.Component {
         cc.audioEngine.stopAll();
     }
 
-    public playEffect(audio: cc.AudioClip): void {
-        if(audio.loaded) cc.audioEngine.playEffect(audio, false);
+    public playEffect(audio: cc.AudioClip): number {
+        return cc.audioEngine.playEffect(audio, false);
     }
 
     public playBackground(audio: cc.AudioClip): void {
@@ -69,5 +72,9 @@ export default class SoundController extends cc.Component {
 
     public play(audio: cc.AudioClip, loop = false, volume: number): void {
         cc.audioEngine.play(audio, loop, volume);
+    }
+
+    public stop(audioId: number): void {
+        cc.audioEngine.stopEffect(audioId);
     }
 }

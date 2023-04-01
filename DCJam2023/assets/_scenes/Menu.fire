@@ -140,7 +140,7 @@
       "__uuid__": "edde5940-81e7-4205-b396-e50ca8bb28da"
     },
     "celebWin": {
-      "__uuid__": "0750f6e5-6bc8-4c9c-8b93-3114cee2ccba"
+      "__uuid__": "ecf09813-d391-4ace-8b58-277281b154b9"
     },
     "effectFall": {
       "__uuid__": "a421d668-f779-40fd-bae7-1bf7101bea1e"
@@ -148,11 +148,14 @@
     "effectFall2": {
       "__uuid__": "2fd827da-aba4-4f1d-adaf-efa352308a07"
     },
-    "promptGo": {
+    "bell": {
       "__uuid__": "57a49668-df55-496f-8184-cc0227186f63"
     },
+    "gong": {
+      "__uuid__": "e696edb0-744b-4e7d-a2bf-32a6ff1e3731"
+    },
     "promptHit": {
-      "__uuid__": "171b4de2-bbf4-4a20-883f-fdd62d00f277"
+      "__uuid__": "5edf042f-fe26-4563-bd20-423d7e0398a4"
     },
     "promptPrepare": {
       "__uuid__": "675de51c-2bc2-42be-8054-9455ec8e589c"
