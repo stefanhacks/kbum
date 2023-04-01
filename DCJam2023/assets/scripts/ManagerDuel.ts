@@ -1,11 +1,15 @@
+import ManagerAnimation from "./ManagerAnimation";
 import { State, Settings } from "./game/Configs";
-import { getTwoRandomChars } from "./game/KeyManager";
+import { getTwoRandomChars } from "./game/GeneratorKey";
 
 const {ccclass, property} = cc._decorator;
 
 @ccclass
 export default class ManagerDuel extends cc.Component {
     private currentState: State;
+
+    @property({ type: ManagerAnimation })
+    animator: ManagerAnimation = null;
 
     @property({ type: cc.Label })
     exclamation: cc.Label = null;
@@ -37,6 +41,7 @@ export default class ManagerDuel extends cc.Component {
     protected onLoad(): void {
         this.currentState = State.WarmUp;
         this.setupTimer();
+        this.animator.highNoon = false;
 
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
     }
@@ -59,6 +64,7 @@ export default class ManagerDuel extends cc.Component {
 
         const interval = max - min;
         this.timer = (Math.random() * interval) + min;
+
         console.error('Wait time: ', this.timer)
     }
 
@@ -84,12 +90,17 @@ export default class ManagerDuel extends cc.Component {
 
     protected doWaitInput(): void {
         this.currentState = State.WaitInput;
+        this.animator.highNoon = true;
 
         const [a, b] = getTwoRandomChars();
         this.expectedA = a;
         this.expectedB = b;
 
         this.exclamation.enabled = true;
+        cc.tween(this.exclamation.node)
+            .set({ scale: 0.9 })
+            .to(0.15, { scale: 1 }, { easing: cc.easing.backOut })
+            .start();
 
         this.instructionA.enabled = true;
         this.instructionA.string = this.expectedA;
@@ -114,6 +125,7 @@ export default class ManagerDuel extends cc.Component {
         cc.tween(camera)
             .to(Settings.repeat, { backgroundColor: cc.Color.BLACK }, { easing: cc.easing.quartOut })
             .call(() => {
+                this.animator.highNoon = false;
                 this.currentState = State.WarmUp;
                 this.result.enabled = false;
                 this.result.string = "";
