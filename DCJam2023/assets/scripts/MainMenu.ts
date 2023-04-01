@@ -5,6 +5,8 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import SoundController from "./SoundController";
+
 const {ccclass, property} = cc._decorator;
 
 @ccclass
@@ -37,6 +39,9 @@ private fadeNodeOut(node: cc.Node) :void {
 }
 
 private changeScene(): void {
+    SoundController.instance.playBackground(SoundController.instance.bgWind);
+    SoundController.instance.playEffect(SoundController.instance.saloonDoorSqueak);
+    SoundController.instance.playEffect(SoundController.instance.promptPrepare);
     cc.director.loadScene('Game');
 }
 }
