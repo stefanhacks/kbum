@@ -21,6 +21,7 @@ export default class MainMenu extends cc.Component {
     private multiplayerButton: cc.Button = null;
 
 private async onPlayClicked() :Promise<void> {
+    SoundController.instance.play(SoundController.instance.menuSelect, false, 1);
     this.fadeNodeOut(this.playButton.node);
     this.fadeNodeIn(this.soloButton.node);
     this.fadeNodeIn(this.multiplayerButton.node);
@@ -40,7 +41,7 @@ private fadeNodeOut(node: cc.Node) :void {
 
 private changeScene(): void {
     SoundController.instance.playBackground(SoundController.instance.bgWind);
-    SoundController.instance.playEffect(SoundController.instance.saloonDoorSqueak);
+    SoundController.instance.play(SoundController.instance.saloonDoorSqueak, false, 0.5);
     SoundController.instance.playEffect(SoundController.instance.promptPrepare);
     cc.director.loadScene('Game');
 }

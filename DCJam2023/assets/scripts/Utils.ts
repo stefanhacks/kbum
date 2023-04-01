@@ -20,4 +20,11 @@ export function randomizePosition(x: RandomRange, y: RandomRange): cc.Vec2 {
   const randY = randomize(y);
   return new cc.Vec2(randX, randY);
 }
+
+/**
+ * Syntax sugar for waiting N seconds in a promise
+ */
+export function waitSeconds(seconds: number): Promise<void> {
+  return new Promise<void>((resolve) => setTimeout(resolve, seconds * 1000));
+}
 // #endregion

@@ -1,4 +1,5 @@
 import SoundController from "./SoundController";
+import { waitSeconds } from "./Utils";
 import ManagerAnimation from "./ManagerAnimation";
 import { State, Settings } from "./game/Configs";
 import { getTwoRandomChars } from "./game/GeneratorKey";
@@ -120,16 +121,19 @@ export default class ManagerDuel extends cc.Component {
 
         this.result.enabled = true;
         this.result.string = player1 ? "<" : ">";
+        const winnerSound = player1 ? SoundController.instance.effectFall : SoundController.instance.effectFall2;
 
         const camera = cc.Camera.cameras[0];
         camera.backgroundColor = cc.Color.WHITE;
 
         SoundController.instance.playEffect(SoundController.instance.promptHit);
-        SoundController.instance.playEffect(SoundController.instance.celebWin);
+        waitSeconds(0.2).then(() => SoundController.instance.playEffect(winnerSound));
+        waitSeconds(1.2).then(() => SoundController.instance.playEffect(SoundController.instance.celebWin));
 
         cc.tween(camera)
             .to(Settings.repeat, { backgroundColor: cc.Color.BLACK }, { easing: cc.easing.quartOut })
             .call(() => {
+                waitSeconds(0.2).then(() => SoundController.instance.playEffect(SoundController.instance.promptPrepare));
                 this.animator.highNoon = false;
                 this.currentState = State.WarmUp;
                 this.result.enabled = false;

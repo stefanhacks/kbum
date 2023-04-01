@@ -46,9 +46,8 @@ export default class SoundController extends cc.Component {
     protected onLoad(): void {
         if (!SoundController.instance) SoundController.instance = this;
         cc.game.addPersistRootNode(this.node);
-        // set channels volume
+        // set channel volume
         cc.audioEngine.setMusicVolume(0.5);
-        cc.audioEngine.setEffectsVolume(0.5);
         // play background menu music
         this.playBackground(this.bgMenuMusic);
         this.currentMusic = this.bgMenuMusic;
@@ -63,8 +62,6 @@ export default class SoundController extends cc.Component {
     }
 
     public playBackground(audio: cc.AudioClip): void {
-        console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-        console.log(cc.audioEngine.isMusicPlaying() && this.currentMusic != audio);
         if(cc.audioEngine.isMusicPlaying() && this.currentMusic != audio) cc.audioEngine.stopMusic();
         cc.audioEngine.playMusic(audio, true);
         this.currentMusic = audio;
