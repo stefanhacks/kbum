@@ -1,10 +1,3 @@
-// Learn TypeScript:
-//  - https://docs.cocos.com/creator/manual/en/scripting/typescript.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
-
 import SoundController from "./SoundController";
 import { AIDifficulty, Config } from "./game/Configs";
 
@@ -13,6 +6,9 @@ const {ccclass, property} = cc._decorator;
 
 @ccclass
 export default class MainMenu extends cc.Component {
+    @property(sp.Skeleton)
+    private intro: sp.Skeleton = null;
+
     @property(cc.Button)
     private playButton: cc.Button = null;
 
@@ -30,6 +26,18 @@ export default class MainMenu extends cc.Component {
 
     @property(cc.Button)
     private youWillDieButton: cc.Button = null;
+
+    @property()
+    private introDuration = 5;
+
+    protected onLoad(): void {
+        this.intro.enabled = true;
+        this.intro.setAnimation(0, 'showdown', false);
+        this.intro.addAnimation(0, 'intro', false);
+        this.intro.addAnimation(0, 'loop', true);
+
+        cc.tween(this.playButton.node).delay(this.introDuration).set({ active: true }).start();
+    }
 
     private async onPlayClicked() :Promise<void> {
         SoundController.instance.play(SoundController.instance.menuSelect, false, 1);

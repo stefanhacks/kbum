@@ -1,0 +1,129 @@
+
+kabum.png
+size: 1973,1743
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+character1_arm
+  rotate: false
+  xy: 390, 1558
+  size: 188, 185
+  orig: 188, 185
+  offset: 0, 0
+  index: -1
+character1_body
+  rotate: true
+  xy: 0, 0
+  size: 586, 806
+  orig: 586, 808
+  offset: 0, 1
+  index: -1
+character1_detail
+  rotate: false
+  xy: 264, 1634
+  size: 125, 109
+  orig: 125, 109
+  offset: 0, 0
+  index: -1
+character1_hand
+  rotate: false
+  xy: 154, 1644
+  size: 109, 99
+  orig: 111, 102
+  offset: 1, 3
+  index: -1
+character1_head
+  rotate: true
+  xy: 1690, 1373
+  size: 370, 283
+  orig: 370, 283
+  offset: 0, 0
+  index: -1
+character1_rightarm
+  rotate: true
+  xy: 579, 1542
+  size: 201, 431
+  orig: 374, 536
+  offset: 4, 1
+  index: -1
+character2_body
+  rotate: true
+  xy: 822, 885
+  size: 579, 672
+  orig: 581, 674
+  offset: 1, 0
+  index: -1
+character2_gun
+  rotate: false
+  xy: 1336, 1465
+  size: 353, 278
+  orig: 355, 278
+  offset: 2, 0
+  index: -1
+character2_head
+  rotate: false
+  xy: 1011, 1509
+  size: 324, 234
+  orig: 325, 236
+  offset: 1, 0
+  index: -1
+character2_leftarm
+  rotate: false
+  xy: 0, 1655
+  size: 153, 88
+  orig: 153, 88
+  offset: 0, 0
+  index: -1
+fg_dust
+  rotate: false
+  xy: 0, 587
+  size: 1922, 297
+  orig: 1922, 298
+  offset: 0, 0
+  index: -1
+logo_kbum
+  rotate: false
+  xy: 0, 1081
+  size: 821, 460
+  orig: 827, 460
+  offset: 3, 0
+  index: -1
+
+kabum2.png
+size: 1922,1082
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg_clock
+  rotate: false
+  xy: 0, 0
+  size: 1922, 1082
+  orig: 1922, 1082
+  offset: 0, 0
+  index: -1
+
+kabum3.png
+size: 1922,1082
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg_color
+  rotate: false
+  xy: 0, 0
+  size: 1922, 1082
+  orig: 1922, 1082
+  offset: 0, 0
+  index: -1
+
+kabum4.png
+size: 1922,1082
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg_color2
+  rotate: false
+  xy: 0, 0
+  size: 1922, 1082
+  orig: 1922, 1082
+  offset: 0, 0
+  index: -1
