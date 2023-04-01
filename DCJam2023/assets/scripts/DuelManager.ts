@@ -64,6 +64,7 @@ export default class DuelManager extends cc.Component {
             this.setupTimer();
             this.doWaitInput();
         }
+        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.returnToMenu, this);
     }
 
     protected doWaitInput(): void {
@@ -102,5 +103,10 @@ export default class DuelManager extends cc.Component {
                 this.result.string = "";
             })
             .start();
+    }
+
+    protected returnToMenu(e: KeyboardEvent): void {
+        const { keyCode } = e;
+        if (keyCode === 27) cc.director.loadScene('Menu');
     }
 }

@@ -615,7 +615,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 97.87,
+      "width": 0,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -701,6 +701,9 @@
     },
     "instruction2": {
       "__id__": 11
+    },
+    "result": {
+      "__id__": 13
     },
     "_id": "8043vY81BIPpvOFqz79f7f"
   },
