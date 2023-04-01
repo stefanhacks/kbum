@@ -351,6 +351,9 @@
     "_children": [
       {
         "__id__": 8
+      },
+      {
+        "__id__": 10
       }
     ],
     "_active": true,
@@ -405,15 +408,116 @@
   },
   {
     "__type__": "cc.Node",
+    "_name": "kabum",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 7
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 9
+      }
+    ],
+    "_prefab": null,
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 1919.94,
+      "height": 1080.1
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        486.316,
+        317.959,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0.6,
+        0.6,
+        0.6
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": "b9IbuEcJlAlL110gIjrm1F"
+  },
+  {
+    "__type__": "sp.Skeleton",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 8
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "7afd064b-113f-480e-b793-8817d19f63c3"
+      }
+    ],
+    "paused": false,
+    "defaultSkin": "default",
+    "defaultAnimation": "",
+    "_preCacheMode": 0,
+    "_cacheMode": 0,
+    "loop": true,
+    "premultipliedAlpha": false,
+    "timeScale": 1,
+    "_accTime": 0,
+    "_playCount": 0,
+    "_frameCache": null,
+    "_curFrame": null,
+    "_skeletonCache": null,
+    "_animationName": "showdown",
+    "_animationQueue": [],
+    "_headAniInfo": null,
+    "_playTimes": 0,
+    "_isAniComplete": true,
+    "_N$skeletonData": {
+      "__uuid__": "848b71b0-0322-4f9b-80ce-4ffbe7dc0207"
+    },
+    "_N$_defaultCacheMode": 0,
+    "_N$debugSlots": false,
+    "_N$debugBones": false,
+    "_N$debugMesh": false,
+    "_N$useTint": false,
+    "_N$enableBatch": false,
+    "_id": "cdcYnapfZDX6TBxZfDXzrx"
+  },
+  {
+    "__type__": "cc.Node",
     "_name": "Menu",
     "_objFlags": 0,
     "_parent": {
       "__id__": 7
     },
     "_children": [
-      {
-        "__id__": 9
-      },
       {
         "__id__": 11
       },
@@ -483,111 +587,17 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Background",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 8
-    },
-    "_children": [],
-    "_active": true,
-    "_components": [
-      {
-        "__id__": 10
-      }
-    ],
-    "_prefab": null,
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 960,
-      "height": 640
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_trs": {
-      "__type__": "TypedArray",
-      "ctor": "Float64Array",
-      "array": [
-        480,
-        320,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    "_eulerAngles": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
-    "_id": "22Nsrms/ZIyYkzp/LmV95p"
-  },
-  {
-    "__type__": "cc.Sprite",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 9
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
-      }
-    ],
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "e7697989-91d2-49c2-b456-f6d9a14afe1f"
-    },
-    "_type": 0,
-    "_sizeMode": 0,
-    "_fillType": 0,
-    "_fillCenter": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "_fillStart": 0,
-    "_fillRange": 0,
-    "_isTrimmedMode": true,
-    "_atlas": null,
-    "_id": "56vGJMHo9FzK7dgOav2Z4r"
-  },
-  {
-    "__type__": "cc.Node",
     "_name": "Play",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 8
+      "__id__": 10
     },
     "_children": [
       {
         "__id__": 12
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 17
@@ -955,7 +965,7 @@
   {
     "__type__": "cc.ClickEvent",
     "target": {
-      "__id__": 8
+      "__id__": 10
     },
     "component": "",
     "_componentId": "2536f4hzH9NdKGErk1f9q8+",
@@ -967,7 +977,7 @@
     "_name": "SinglePlayer",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 8
+      "__id__": 10
     },
     "_children": [
       {
@@ -1342,7 +1352,7 @@
   {
     "__type__": "cc.ClickEvent",
     "target": {
-      "__id__": 8
+      "__id__": 10
     },
     "component": "",
     "_componentId": "2536f4hzH9NdKGErk1f9q8+",
@@ -1354,7 +1364,7 @@
     "_name": "Multiplayer",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 8
+      "__id__": 10
     },
     "_children": [
       {
@@ -1729,7 +1739,7 @@
   {
     "__type__": "cc.ClickEvent",
     "target": {
-      "__id__": 8
+      "__id__": 10
     },
     "component": "",
     "_componentId": "2536f4hzH9NdKGErk1f9q8+",
@@ -1741,7 +1751,7 @@
     "_name": "SelectDifficulty",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 8
+      "__id__": 10
     },
     "_children": [
       {
@@ -2184,7 +2194,7 @@
   {
     "__type__": "cc.ClickEvent",
     "target": {
-      "__id__": 8
+      "__id__": 10
     },
     "component": "",
     "_componentId": "2536f4hzH9NdKGErk1f9q8+",
@@ -2571,7 +2581,7 @@
   {
     "__type__": "cc.ClickEvent",
     "target": {
-      "__id__": 8
+      "__id__": 10
     },
     "component": "",
     "_componentId": "2536f4hzH9NdKGErk1f9q8+",
@@ -2958,7 +2968,7 @@
   {
     "__type__": "cc.ClickEvent",
     "target": {
-      "__id__": 8
+      "__id__": 10
     },
     "component": "",
     "_componentId": "2536f4hzH9NdKGErk1f9q8+",
@@ -2970,9 +2980,12 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 8
+      "__id__": 10
     },
     "_enabled": true,
+    "intro": {
+      "__id__": 9
+    },
     "playButton": {
       "__id__": 17
     },
@@ -2991,6 +3004,7 @@
     "youWillDieButton": {
       "__id__": 58
     },
+    "introDuration": 6.3,
     "_id": "c4l8jcc+lNdZ7MZ88RjhM2"
   },
   {
