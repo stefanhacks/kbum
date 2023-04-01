@@ -60,7 +60,7 @@ export default class ManagerDuel extends cc.Component {
                 this.doWarmUp(dt);
                 break;
             case State.WaitInput:
-                if (Config.instance.difficulty) this.callAI(dt)
+                if (Config.instance.difficulty !== undefined) this.callAI(dt)
                 break;
             default:
                 break;
@@ -78,13 +78,12 @@ export default class ManagerDuel extends cc.Component {
     }
 
     protected setupTimerAI(): void {
-        console.error(Config.instance.difficulty)
-        if (Config.instance.difficulty) return;
+        console.log(Config.instance.difficulty)
+        if (Config.instance.difficulty === undefined) return;
         const { min, max } = TimersAI[Config.instance.difficulty];
 
         const interval = max - min;
         this.timerAI = (Math.random() * interval) + min;
-        console.error('Timer AI: ', this.timerAI);
     }
 
     protected onKeyDown(e: KeyboardEvent): void {
@@ -126,7 +125,7 @@ export default class ManagerDuel extends cc.Component {
         this.instructionA.enabled = true;
         this.instructionA.string = this.expectedA;
 
-        if (Config.instance.difficulty) {
+        if (Config.instance.difficulty === undefined) {
             this.instructionB.enabled = true;
             this.instructionB.string = this.expectedB;
         }

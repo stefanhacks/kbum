@@ -57,6 +57,10 @@ export default class MainMenu extends cc.Component {
         this.changeScene(AIDifficulty.YouWillDie);
     }
 
+    private async onMultiplayerClicked() :Promise<void> {
+        this.changeScene();
+    }
+
     private fadeNodeIn(node: cc.Node) :void {
         node.active = true;
         new Promise<void>((resolve) => {
@@ -71,7 +75,7 @@ export default class MainMenu extends cc.Component {
         });
     }
 
-    private changeScene(difficulty: AIDifficulty): void {
+    private changeScene(difficulty?: AIDifficulty): void {
         SoundController.instance.playBackground(SoundController.instance.bgWind);
         SoundController.instance.play(SoundController.instance.saloonDoorSqueak, false, 0.5);
         SoundController.instance.playEffect(SoundController.instance.promptPrepare);

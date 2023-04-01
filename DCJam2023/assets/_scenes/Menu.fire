@@ -1733,7 +1733,7 @@
     },
     "component": "",
     "_componentId": "2536f4hzH9NdKGErk1f9q8+",
-    "handler": "changeScene",
+    "handler": "onMultiplayerClicked",
     "customEventData": ""
   },
   {

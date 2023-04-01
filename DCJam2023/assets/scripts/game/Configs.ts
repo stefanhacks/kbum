@@ -33,6 +33,6 @@ export const Settings: SettingsObject = {
 
 export const TimersAI = {
     [AIDifficulty.Easy]: { min: 1.5, max: 2 },
-    [AIDifficulty.Hard]: { min: 0.75, max: 125 },
+    [AIDifficulty.Hard]: { min: 0.75, max: 1.25 },
     [AIDifficulty.YouWillDie]: { min: 0.25, max: 0.5}
 }
