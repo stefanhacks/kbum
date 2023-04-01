@@ -4,6 +4,9 @@ const {ccclass, property} = cc._decorator;
 export default class ManagerAnimation extends cc.Component {
 
     @property(cc.Node)
+    flash: cc.Node = null;
+
+    @property(cc.Node)
     minutePointer: cc.Node = null;
 
     minutePointerBaseRotation: number;

@@ -130,8 +130,9 @@ export default class ManagerDuel extends cc.Component {
         waitSeconds(0.2).then(() => SoundController.instance.playEffect(winnerSound));
         waitSeconds(1.2).then(() => SoundController.instance.playEffect(SoundController.instance.celebWin));
 
-        cc.tween(camera)
-            .to(Settings.repeat, { backgroundColor: cc.Color.BLACK }, { easing: cc.easing.quartOut })
+        this.animator.flash.opacity = 255;
+        cc.tween(this.animator.flash)
+            .to(Settings.repeat, { opacity: 0 }, { easing: cc.easing.quartOut })
             .call(() => {
                 waitSeconds(0.2).then(() => SoundController.instance.playEffect(SoundController.instance.promptPrepare));
                 this.animator.highNoon = false;
