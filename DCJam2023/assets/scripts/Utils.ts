@@ -27,4 +27,18 @@ export function randomizePosition(x: RandomRange, y: RandomRange): cc.Vec2 {
 export function waitSeconds(seconds: number): Promise<void> {
   return new Promise<void>((resolve) => setTimeout(resolve, seconds * 1000));
 }
+
+
+/**
+ * Load the asset 'default_sprite_splash' from Cocos default resources.
+ * @returns a SpriteFrame for 'default_sprite_splash
+ */
+export function loadDefaultSpriteSplash(): Promise<cc.SpriteFrame> {
+  return new Promise<cc.SpriteFrame>((resolve) => {
+    cc.resources.load<cc.SpriteFrame>('default_sprite_splash', cc.SpriteFrame, (err, spriteFrame) => {
+      if (err) throw err;
+      resolve(spriteFrame);
+    });
+  });
+}
 // #endregion

@@ -3,6 +3,7 @@ import { waitSeconds } from "./Utils";
 import ManagerAnimation from "./ManagerAnimation";
 import { State, Settings, TimersAI, Config } from "./game/Configs";
 import { getTwoRandomChars } from "./game/GeneratorKey";
+import Transition from "./Transition";
 
 const {ccclass, property} = cc._decorator;
 
@@ -159,18 +160,16 @@ export default class ManagerDuel extends cc.Component {
         }
         cc.tween(this.animator.flash)
             .to(Settings.flash, { opacity: 0 }, { easing: cc.easing.quartIn })
-            .call(() => {
-                waitSeconds(Settings.repeat + 0.2).then(() => {
-                    SoundController.instance.stop(this.gongSoundId);
-                    SoundController.instance.playEffect(SoundController.instance.promptPrepare)
-                });
-            })
             .delay(Settings.repeat + 0.2)
-            .call(() => {
+            .call(async () => {
+              await Transition.toBlack();
               this.animator.highNoon = false;
-              this.currentState = State.WarmUp;
               this.animator.player1.playIdle();
               this.animator.player2.playIdle();
+              await Transition.exit();
+              SoundController.instance.stop(this.gongSoundId);
+              SoundController.instance.playEffect(SoundController.instance.promptPrepare)
+              this.currentState = State.WarmUp;
             })
             .start();
     }

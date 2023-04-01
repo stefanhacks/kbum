@@ -82,8 +82,10 @@ export default class MainMenu extends cc.Component {
         SoundController.instance.play(SoundController.instance.saloonDoorSqueak, false, 0.5);
         SoundController.instance.playEffect(SoundController.instance.promptPrepare);
         Config.instance.difficulty = difficulty;
-        Transition.toBlack().then(() => {
+        Transition.toBlack();
+        cc.director.preloadScene('Game', undefined, async () => {
           cc.director.loadScene('Game');
+          Transition.exit();
         });
     }
 }
