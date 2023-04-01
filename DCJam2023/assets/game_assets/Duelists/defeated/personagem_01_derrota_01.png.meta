@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "75f2a198-94c3-4d03-a0f9-57d9b39cc4f7",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 252,
+  "height": 238,
+  "platformSettings": {},
+  "subMetas": {
+    "personagem_01_derrota_01": {
+      "ver": "1.0.6",
+      "uuid": "544094d4-bd0c-41ea-8734-f10be318a874",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "75f2a198-94c3-4d03-a0f9-57d9b39cc4f7",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 252,
+      "height": 238,
+      "rawWidth": 252,
+      "rawHeight": 238,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
