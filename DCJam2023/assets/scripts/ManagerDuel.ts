@@ -1,10 +1,10 @@
-import { Settings, State } from "./Duel/Configs";
-import { getTwoRandomChars } from "./Duel/KeyManager";
+import { State, Settings } from "./game/Configs";
+import { getTwoRandomChars } from "./game/KeyManager";
 
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class DuelManager extends cc.Component {
+export default class ManagerDuel extends cc.Component {
     private currentState: State;
 
     @property({ type: cc.Label })

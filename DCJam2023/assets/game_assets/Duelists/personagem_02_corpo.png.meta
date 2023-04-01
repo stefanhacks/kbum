@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "6b5d46ac-2b40-42ac-80e2-14345001a402",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 579,
+  "height": 672,
+  "platformSettings": {},
+  "subMetas": {
+    "personagem_02_corpo": {
+      "ver": "1.0.6",
+      "uuid": "24740e61-0e45-4c0a-8ec4-1bf64bc362ff",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "6b5d46ac-2b40-42ac-80e2-14345001a402",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 579,
+      "height": 672,
+      "rawWidth": 579,
+      "rawHeight": 672,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
