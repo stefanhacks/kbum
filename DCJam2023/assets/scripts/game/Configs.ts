@@ -23,12 +23,14 @@ type MinMax = { min: number, max: number };
 
 export type SettingsObject = {
     warmUp: MinMax;
+    flash: number;
     repeat: number;
 }
 
 export const Settings: SettingsObject = {
     warmUp: { min: 3, max: 8 },
-    repeat: 5,
+    flash: 2.5,
+    repeat: 4,
 }
 
 export const TimersAI = {

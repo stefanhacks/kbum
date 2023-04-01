@@ -8,6 +8,7 @@
 import SoundController from "./SoundController";
 import { AIDifficulty, Config } from "./game/Configs";
 
+
 const {ccclass, property} = cc._decorator;
 
 @ccclass
