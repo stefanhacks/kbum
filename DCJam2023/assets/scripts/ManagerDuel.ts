@@ -104,7 +104,7 @@ export default class ManagerDuel extends cc.Component {
         if (this.timer === 0) {
             this.setupTimer();
             SoundController.instance.playEffect(SoundController.instance.bell);
-            this.gongSoundId = SoundController.instance.playEffect(SoundController.instance.gong);
+            this.gongSoundId = SoundController.instance.play(SoundController.instance.gong, false, 0.7);
             this.setupTimerAI();
             this.doWaitInput();
         }
@@ -140,16 +140,13 @@ export default class ManagerDuel extends cc.Component {
         this.instructionA.enabled = false;
         this.instructionB.enabled = false;
 
-        const winnerSound = player1 ? SoundController.instance.effectFall : SoundController.instance.effectFall2;
 
         const camera = cc.Camera.cameras[0];
         camera.backgroundColor = cc.Color.WHITE;
 
         SoundController.instance.playEffect(SoundController.instance.promptHit);
-        waitSeconds(0.2).then(() => SoundController.instance.playEffect(winnerSound));
-        waitSeconds(1.2).then(() => {
-            SoundController.instance.playEffect(SoundController.instance.celebWin);
-            SoundController.instance.stop(this.gongSoundId);
+        waitSeconds(2).then(() => {
+            SoundController.instance.play(SoundController.instance.celebWin, false, 1);
         });
 
         this.animator.flash.opacity = 255;
@@ -161,11 +158,14 @@ export default class ManagerDuel extends cc.Component {
           this.animator.player1.playLost();
         }
         cc.tween(this.animator.flash)
-            .to(Settings.repeat / 2, { opacity: 0 }, { easing: cc.easing.quartIn })
+            .to(Settings.flash, { opacity: 0 }, { easing: cc.easing.quartIn })
             .call(() => {
-                waitSeconds(Settings.repeat / 2 + 0.2).then(() => SoundController.instance.playEffect(SoundController.instance.promptPrepare));
+                waitSeconds(Settings.repeat + 0.2).then(() => {
+                    SoundController.instance.stop(this.gongSoundId);
+                    SoundController.instance.playEffect(SoundController.instance.promptPrepare)
+                });
             })
-            .delay(Settings.repeat / 2)
+            .delay(Settings.repeat + 0.2)
             .call(() => {
               this.animator.highNoon = false;
               this.currentState = State.WarmUp;

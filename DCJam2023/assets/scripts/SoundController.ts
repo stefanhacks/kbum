@@ -13,12 +13,6 @@ export default class SoundController extends cc.Component {
 
     @property(cc.AudioClip)
     public celebWin: cc.AudioClip = null;
-
-    @property(cc.AudioClip)
-    public effectFall: cc.AudioClip = null;
-
-    @property(cc.AudioClip)
-    public effectFall2: cc.AudioClip = null;
   
     @property(cc.AudioClip)
     public bell: cc.AudioClip = null;
@@ -70,11 +64,11 @@ export default class SoundController extends cc.Component {
         this.currentMusic = audio;
     }
 
-    public play(audio: cc.AudioClip, loop = false, volume: number): void {
-        cc.audioEngine.play(audio, loop, volume);
+    public play(audio: cc.AudioClip, loop = false, volume: number): number {
+        return cc.audioEngine.play(audio, loop, volume);
     }
 
     public stop(audioId: number): void {
-        cc.audioEngine.stopEffect(audioId);
+        cc.audioEngine.stop(audioId);
     }
 }
