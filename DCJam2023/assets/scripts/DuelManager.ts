@@ -1,4 +1,5 @@
 import { Settings, State } from "./Duel/Configs";
+import { getTwoRandomChars } from "./Duel/KeyManager";
 
 const {ccclass, property} = cc._decorator;
 
@@ -7,17 +8,19 @@ export default class DuelManager extends cc.Component {
     private currentState: State;
 
     @property({ type: cc.Label })
-    label: cc.Label = null;
-
-    @property({ type: cc.Label })
-    instruction1: cc.Label = null;
-
-    @property({ type: cc.Label })
-    instruction2: cc.Label = null;
+    exclamation: cc.Label = null;
 
     @property({ type: cc.Label })
     result: cc.Label = null;
 
+    @property({ type: cc.Label })
+    instructionA: cc.Label = null;
+
+    @property({ type: cc.Label })
+    instructionB: cc.Label = null;
+
+    private expectedA: string;
+    private expectedB: string;
     private _timer: number;
 
     //#region Setters
@@ -34,15 +37,8 @@ export default class DuelManager extends cc.Component {
     protected onLoad(): void {
         this.currentState = State.WarmUp;
         this.setupTimer();
-    }
 
-    protected setupTimer(): void {
-        const { min, max } = Settings.warmUp;
-        if (max < min) throw new Error ("Max bigger than min on Game Warmup timer.");
-
-        const interval = max - min;
-        this.timer = (Math.random() * interval) + min;
-        console.error('Wait time: ', this.timer)
+        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
     }
 
     protected lateUpdate(dt: number): void {
@@ -56,8 +52,28 @@ export default class DuelManager extends cc.Component {
                 break;
         }
     }
+
+    protected setupTimer(): void {
+        const { min, max } = Settings.warmUp;
+        if (max < min) throw new Error ("Max bigger than min on Game Warmup timer.");
+
+        const interval = max - min;
+        this.timer = (Math.random() * interval) + min;
+        console.error('Wait time: ', this.timer)
+    }
+
+    protected onKeyDown(e: KeyboardEvent): void {
+        const { keyCode } = e;
+        const keyA = this.expectedA.charCodeAt(0);
+        const keyB = this.expectedB.charCodeAt(0);
+        if (this.currentState !== State.WaitInput || (keyCode !== keyA && keyCode !== keyB)) return;
+
+        this.currentState = State.WindDown;
+        this.doWindDown(keyCode === keyA);
+    }
     //#endregion
 
+    //#region States
     protected doWarmUp(dt: number): void {
         this.timer = this.timer - dt;
         if (this.timer === 0) {
@@ -69,27 +85,28 @@ export default class DuelManager extends cc.Component {
     protected doWaitInput(): void {
         this.currentState = State.WaitInput;
 
-        this.label.enabled = true;
-        this.instruction1.enabled = true;
-        this.instruction1.string = 'a';
+        const [a, b] = getTwoRandomChars();
+        this.expectedA = a;
+        this.expectedB = b;
 
-        this.instruction2.enabled = true;
-        this.instruction2.string = 'm';
+        this.exclamation.enabled = true;
 
-        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
+        this.instructionA.enabled = true;
+        this.instructionA.string = this.expectedA;
+
+        this.instructionB.enabled = true;
+        this.instructionB.string = this.expectedB;
     }
 
-    protected onKeyDown(e: KeyboardEvent): void {
-        const { keyCode } = e;
-        if (keyCode !== 65 && keyCode !== 77) return;
+    protected doWindDown(player1: boolean): void {
         this.currentState = State.WindDown;
 
-        this.label.enabled = false;
-        this.instruction1.enabled = false;
-        this.instruction2.enabled = false;
+        this.exclamation.enabled = false;
+        this.instructionA.enabled = false;
+        this.instructionB.enabled = false;
 
         this.result.enabled = true;
-        this.result.string = keyCode === 65 ? "<" : ">";
+        this.result.string = player1 ? "<" : ">";
 
         const camera = cc.Camera.cameras[0];
         camera.backgroundColor = cc.Color.WHITE;
@@ -103,4 +120,5 @@ export default class DuelManager extends cc.Component {
             })
             .start();
     }
+    //#endregion
 }

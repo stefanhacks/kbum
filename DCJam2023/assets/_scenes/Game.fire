@@ -307,7 +307,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Label",
+    "_name": "Exclamation",
     "_objFlags": 0,
     "_parent": {
       "__id__": 5
@@ -615,7 +615,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 97.87,
+      "width": 0,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -693,13 +693,16 @@
       "__id__": 5
     },
     "_enabled": true,
-    "label": {
+    "exclamation": {
       "__id__": 7
     },
-    "instruction1": {
+    "result": {
+      "__id__": 13
+    },
+    "instructionA": {
       "__id__": 9
     },
-    "instruction2": {
+    "instructionB": {
       "__id__": 11
     },
     "_id": "8043vY81BIPpvOFqz79f7f"
