@@ -1,4 +1,5 @@
 import SoundController from "./SoundController";
+import Transition from "./Transition";
 import { AIDifficulty, Config } from "./game/Configs";
 
 
@@ -89,6 +90,10 @@ export default class MainMenu extends cc.Component {
         SoundController.instance.play(SoundController.instance.saloonDoorSqueak, false, 0.5);
         SoundController.instance.playEffect(SoundController.instance.promptPrepare);
         Config.instance.difficulty = difficulty;
-        cc.director.loadScene('Game');
+        Transition.toBlack();
+        cc.director.preloadScene('Game', undefined, async () => {
+          cc.director.loadScene('Game');
+          Transition.exit();
+        });
     }
 }
