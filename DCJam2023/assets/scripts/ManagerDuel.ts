@@ -130,14 +130,27 @@ export default class ManagerDuel extends cc.Component {
         waitSeconds(0.2).then(() => SoundController.instance.playEffect(winnerSound));
         waitSeconds(1.2).then(() => SoundController.instance.playEffect(SoundController.instance.celebWin));
 
-        cc.tween(camera)
-            .to(Settings.repeat, { backgroundColor: cc.Color.BLACK }, { easing: cc.easing.quartOut })
+        this.animator.flash.opacity = 255;
+        if (player1) {
+          this.animator.player1.playWon();
+          this.animator.player2.playLost();
+        } else {
+          this.animator.player2.playWon();
+          this.animator.player1.playLost();
+        }
+        cc.tween(this.animator.flash)
+            .to(Settings.repeat / 2, { opacity: 0 }, { easing: cc.easing.quartIn })
             .call(() => {
-                waitSeconds(0.2).then(() => SoundController.instance.playEffect(SoundController.instance.promptPrepare));
-                this.animator.highNoon = false;
-                this.currentState = State.WarmUp;
-                this.result.enabled = false;
-                this.result.string = "";
+                waitSeconds(Settings.repeat / 2 + 0.2).then(() => SoundController.instance.playEffect(SoundController.instance.promptPrepare));
+            })
+            .delay(Settings.repeat / 2)
+            .call(() => {
+              this.animator.highNoon = false;
+              this.currentState = State.WarmUp;
+              this.result.enabled = false;
+              this.result.string = "";
+              this.animator.player1.playIdle();
+              this.animator.player2.playIdle();
             })
             .start();
     }

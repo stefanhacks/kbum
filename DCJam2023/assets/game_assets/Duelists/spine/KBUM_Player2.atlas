@@ -1,0 +1,34 @@
+
+KBUM_Player2.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+personagem_02_corpo
+  rotate: false
+  xy: 1, 1
+  size: 579, 672
+  orig: 579, 672
+  offset: 0, 0
+  index: -1
+personagem_02_cabeça
+  rotate: false
+  xy: 356, 675
+  size: 323, 234
+  orig: 323, 234
+  offset: 0, 0
+  index: -1
+personagem_02_braço
+  rotate: false
+  xy: 356, 911
+  size: 151, 86
+  orig: 151, 86
+  offset: 0, 0
+  index: -1
+personagem_02_mão
+  rotate: false
+  xy: 1, 675
+  size: 353, 260
+  orig: 353, 265
+  offset: 0, 0
+  index: -1

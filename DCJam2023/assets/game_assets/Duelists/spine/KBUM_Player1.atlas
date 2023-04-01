@@ -1,0 +1,62 @@
+
+KBUM_Player1.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+personagem_01_braço_02
+  rotate: false
+  xy: 587, 589
+  size: 186, 183
+  orig: 186, 183
+  offset: 0, 0
+  index: -1
+concept_01
+  rotate: false
+  xy: 718, 559
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+personagem_01_mão_02
+  rotate: false
+  xy: 843, 450
+  size: 109, 100
+  orig: 109, 100
+  offset: 0, 0
+  index: -1
+personagem_01_cabeça
+  rotate: false
+  xy: 587, 1
+  size: 368, 281
+  orig: 368, 281
+  offset: 0, 0
+  index: -1
+personagem_01_corpo
+  rotate: false
+  xy: 1, 1
+  size: 584, 806
+  orig: 584, 806
+  offset: 0, 0
+  index: -1
+personagem_01_detalhe
+  rotate: false
+  xy: 718, 450
+  size: 123, 107
+  orig: 123, 107
+  offset: 0, 0
+  index: -1
+personagem_01_braço_01
+  rotate: false
+  xy: 587, 284
+  size: 129, 303
+  orig: 129, 303
+  offset: 0, 0
+  index: -1
+personagem_01_mão_01
+  rotate: false
+  xy: 718, 284
+  size: 139, 164
+  orig: 139, 164
+  offset: 0, 0
+  index: -1
