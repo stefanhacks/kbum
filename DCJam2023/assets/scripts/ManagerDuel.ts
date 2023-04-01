@@ -1,3 +1,4 @@
+import SoundController from "./SoundController";
 import ManagerAnimation from "./ManagerAnimation";
 import { State, Settings } from "./game/Configs";
 import { getTwoRandomChars } from "./game/GeneratorKey";
@@ -84,6 +85,7 @@ export default class ManagerDuel extends cc.Component {
         this.timer = this.timer - dt;
         if (this.timer === 0) {
             this.setupTimer();
+            SoundController.instance.playEffect(SoundController.instance.promptGo);
             this.doWaitInput();
         }
     }
@@ -121,6 +123,9 @@ export default class ManagerDuel extends cc.Component {
 
         const camera = cc.Camera.cameras[0];
         camera.backgroundColor = cc.Color.WHITE;
+
+        SoundController.instance.playEffect(SoundController.instance.promptHit);
+        SoundController.instance.playEffect(SoundController.instance.celebWin);
 
         cc.tween(camera)
             .to(Settings.repeat, { backgroundColor: cc.Color.BLACK }, { easing: cc.easing.quartOut })

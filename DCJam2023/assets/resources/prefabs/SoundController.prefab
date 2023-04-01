@@ -1,0 +1,136 @@
+[
+  {
+    "__type__": "cc.Prefab",
+    "_name": "",
+    "_objFlags": 0,
+    "_native": "",
+    "data": {
+      "__id__": 1
+    },
+    "optimizationPolicy": 0,
+    "asyncLoadAssets": false,
+    "readonly": false
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "SoundController",
+    "_objFlags": 0,
+    "_parent": null,
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 2
+      }
+    ],
+    "_prefab": {
+      "__id__": 3
+    },
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 0,
+      "height": 0
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "f9c6dZg6ClGeY5dtNcRzZZ+",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "bgMusic": {
+      "__uuid__": "55fb8499-c602-498e-80e8-24ec574a6e42"
+    },
+    "bgMenuMusic": {
+      "__uuid__": "3e2a3308-a2a6-46aa-9580-949ffcfae0f6"
+    },
+    "bgWind": {
+      "__uuid__": "edde5940-81e7-4205-b396-e50ca8bb28da"
+    },
+    "celebWin": {
+      "__uuid__": "0750f6e5-6bc8-4c9c-8b93-3114cee2ccba"
+    },
+    "effectFall": {
+      "__uuid__": "a421d668-f779-40fd-bae7-1bf7101bea1e"
+    },
+    "effectFall2": {
+      "__uuid__": "2fd827da-aba4-4f1d-adaf-efa352308a07"
+    },
+    "promptGo": {
+      "__uuid__": "9895c704-8606-41d1-a232-421a968cb456"
+    },
+    "promptHit": {
+      "__uuid__": "171b4de2-bbf4-4a20-883f-fdd62d00f277"
+    },
+    "promptPrepare": {
+      "__uuid__": "675de51c-2bc2-42be-8054-9455ec8e589c"
+    },
+    "saloonDoorSqueak": {
+      "__uuid__": "8a6e45ad-019e-4198-b622-be6dd3263542"
+    },
+    "whipCrack": {
+      "__uuid__": "fc3464be-5310-453b-9223-282abd2c0d4f"
+    },
+    "menuBack": {
+      "__uuid__": "4e356f36-40c2-4a54-89e8-a1b6595e7050"
+    },
+    "menuSelect": {
+      "__uuid__": "29fd2408-1a11-460a-860c-1258fc7cc71d"
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "",
+    "sync": false
+  }
+]
