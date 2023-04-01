@@ -10,6 +10,6 @@ export type SettingsObject = {
 }
 
 export const Settings: SettingsObject = {
-    warmUp: { min: 1, max: 4 },
-    repeat: 2,
+    warmUp: { min: 3, max: 8 },
+    repeat: 5,
 }
