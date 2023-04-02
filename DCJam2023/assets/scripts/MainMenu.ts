@@ -1,5 +1,6 @@
 import SoundController from "./SoundController";
 import Transition from "./Transition";
+import { waitSeconds } from "./Utils";
 import { AIDifficulty, Config } from "./game/Configs";
 
 
@@ -29,7 +30,7 @@ export default class MainMenu extends cc.Component {
     private youWillDieButton: cc.Button = null;
 
     @property()
-    private introDuration = 5;
+    private introDuration = null;
 
     protected onLoad(): void {
         this.intro.enabled = true;
@@ -38,6 +39,21 @@ export default class MainMenu extends cc.Component {
         this.intro.addAnimation(0, 'loop', true);
 
         cc.tween(this.playButton.node).delay(this.introDuration).set({ active: true }).start();
+        waitSeconds(this.introDuration).then(() => 
+        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.returnToPlayButton, this));
+    }
+
+    private returnToPlayButton(e: KeyboardEvent) :void {
+        const { keyCode } = e;
+        if (keyCode === 27) {
+        SoundController.instance.play(SoundController.instance.menuSelect, false, 1);
+        this.fadeNodeIn(this.playButton.node);
+        this.fadeNodeOut(this.soloButton.node);
+        this.fadeNodeOut(this.multiplayerButton.node);
+        this.fadeNodeOut(this.easyButton.node);
+        this.fadeNodeOut(this.hardButton.node);
+        this.fadeNodeOut(this.youWillDieButton.node);
+        }
     }
 
     private async onPlayClicked() :Promise<void> {
@@ -48,6 +64,7 @@ export default class MainMenu extends cc.Component {
     }
 
     private async onSoloClicked() :Promise<void> {
+        SoundController.instance.play(SoundController.instance.menuSelect, false, 1);
         this.fadeNodeOut(this.soloButton.node);
         this.fadeNodeOut(this.multiplayerButton.node);
         this.fadeNodeIn(this.easyButton.node);

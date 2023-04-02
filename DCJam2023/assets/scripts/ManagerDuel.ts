@@ -48,9 +48,9 @@ export default class ManagerDuel extends cc.Component {
     //#endregion
 
     //#region Cocos
-    protected onLoad(): void {
+    protected async onLoad(): Promise<void> {
+        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.returnToMainMenu, this)
         this.currentState = State.WarmUp;
-        this.setupTimerAI();
         this.setupTimer();
         this.animator.highNoon = false;
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
@@ -76,16 +76,24 @@ export default class ManagerDuel extends cc.Component {
         const interval = max - min;
         this.timer = (Math.random() * interval) + min;
 
-        console.error('Wait time: ', this.timer)
+        console.error('Wait time: ', this.timer);
     }
 
     protected setupTimerAI(): void {
-        console.log(Config.instance.difficulty)
         if (Config.instance.difficulty === undefined) return;
         const { min, max } = TimersAI[Config.instance.difficulty];
 
         const interval = max - min;
         this.timerAI = (Math.random() * interval) + min;
+
+        console.error('AI time: ', this.timerAI);
+    }
+
+    protected callAI(dt: number): void {
+        this.timerAI = this.timerAI - dt;
+        if (this.timerAI === 0) {
+            this.doWindDown(false)
+        }
     }
 
     protected onKeyDown(e: KeyboardEvent): void {
@@ -96,6 +104,15 @@ export default class ManagerDuel extends cc.Component {
 
         this.currentState = State.WindDown;
         this.doWindDown(keyCode === keyA);
+    }
+
+    protected returnToMainMenu(e: KeyboardEvent): void {
+        const { keyCode } = e;
+        if (keyCode === 27) {
+            cc.director.loadScene('Menu');
+            cc.audioEngine.stopAll()
+            SoundController.instance.playBackground(SoundController.instance.bgMenuMusic)
+        }
     }
     //#endregion
 
@@ -174,12 +191,6 @@ export default class ManagerDuel extends cc.Component {
             .start();
     }
 
-    protected callAI(dt: number): void {
-        this.timerAI = this.timerAI - dt;
-        if (this.timerAI === 0) {
-            console.log('DEAD')
-            this.doWindDown(false)
-        }
-    }
+
     //#endregion
 }
