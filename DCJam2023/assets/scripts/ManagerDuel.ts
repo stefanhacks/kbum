@@ -129,6 +129,7 @@ export default class ManagerDuel extends cc.Component {
     }
 
     protected doWaitInput(): void {
+        cc.systemEvent.off(cc.SystemEvent.EventType.KEY_DOWN, this.returnToMainMenu, this)
         this.currentState = State.WaitInput;
         this.animator.highNoon = true;
 
@@ -152,6 +153,7 @@ export default class ManagerDuel extends cc.Component {
     }
 
     protected doWindDown(player1: boolean): void {
+        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.returnToMainMenu, this)
         this.currentState = State.WindDown;
 
         this.exclamation.enabled = false;
