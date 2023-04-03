@@ -1,7 +1,7 @@
 {
   "title": "DCJam2023",
   "packageName": "org.cocos2d.demo",
-  "startScene": "a0b7edbd-5856-4ef8-b333-ca44a69b02b3",
+  "startScene": "d81d89bb-18f1-4697-bf68-776b2276fd1d",
   "excludeScenes": [],
   "orientation": {
     "landscapeRight": true,
@@ -12,7 +12,7 @@
   "webOrientation": "auto",
   "inlineSpriteFrames": true,
   "inlineSpriteFrames_native": true,
-  "mainCompressionType": "default",
+  "mainCompressionType": "merge_all_json",
   "mainIsRemote": false,
   "optimizeHotUpdate": false,
   "md5Cache": true,
