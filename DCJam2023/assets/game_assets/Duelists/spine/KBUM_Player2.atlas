@@ -1,34 +1,55 @@
 
 KBUM_Player2.png
-size: 1024,1024
+size: 1024,2048
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 personagem_02_corpo
   rotate: false
-  xy: 1, 1
+  xy: 1, 679
   size: 579, 672
   orig: 579, 672
   offset: 0, 0
   index: -1
 personagem_02_cabeça
   rotate: false
-  xy: 356, 675
+  xy: 1, 1792
   size: 323, 234
   orig: 323, 234
   offset: 0, 0
   index: -1
 personagem_02_braço
   rotate: false
-  xy: 356, 911
+  xy: 346, 1541
   size: 151, 86
   orig: 151, 86
   offset: 0, 0
   index: -1
 personagem_02_mão
   rotate: false
-  xy: 1, 675
+  xy: 568, 1353
   size: 353, 260
   orig: 353, 265
+  offset: 0, 0
+  index: -1
+personagem_02_vitoria_corpo
+  rotate: false
+  xy: 1, 1
+  size: 679, 676
+  orig: 679, 676
+  offset: 0, 0
+  index: -1
+personagem_02_vitoria_cabeça
+  rotate: false
+  xy: 1, 1541
+  size: 343, 249
+  orig: 343, 249
+  offset: 0, 0
+  index: -1
+personagem_02_vitoria_mão
+  rotate: false
+  xy: 1, 1353
+  size: 565, 186
+  orig: 565, 186
   offset: 0, 0
   index: -1

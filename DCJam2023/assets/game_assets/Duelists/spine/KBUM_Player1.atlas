@@ -1,33 +1,26 @@
 
 KBUM_Player1.png
-size: 1024,1024
+size: 2048,1024
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 personagem_01_braço_02
   rotate: false
-  xy: 587, 589
+  xy: 1, 809
   size: 186, 183
   orig: 186, 183
   offset: 0, 0
   index: -1
-concept_01
-  rotate: false
-  xy: 718, 559
-  size: 1, 1
-  orig: 1, 1
-  offset: 0, 0
-  index: -1
 personagem_01_mão_02
   rotate: false
-  xy: 843, 450
+  xy: 949, 901
   size: 109, 100
   orig: 109, 100
   offset: 0, 0
   index: -1
 personagem_01_cabeça
   rotate: false
-  xy: 587, 1
+  xy: 1179, 1
   size: 368, 281
   orig: 368, 281
   offset: 0, 0
@@ -41,22 +34,64 @@ personagem_01_corpo
   index: -1
 personagem_01_detalhe
   rotate: false
-  xy: 718, 450
+  xy: 686, 901
   size: 123, 107
   orig: 123, 107
   offset: 0, 0
   index: -1
 personagem_01_braço_01
   rotate: false
-  xy: 587, 284
+  xy: 1549, 1
   size: 129, 303
   orig: 129, 303
   offset: 0, 0
   index: -1
 personagem_01_mão_01
   rotate: false
-  xy: 718, 284
+  xy: 369, 809
   size: 139, 164
   orig: 139, 164
+  offset: 0, 0
+  index: -1
+personagem_01_vitoria_mão_02
+  rotate: false
+  xy: 811, 901
+  size: 136, 96
+  orig: 136, 96
+  offset: 0, 0
+  index: -1
+personagem_01_vitoria_braço_02
+  rotate: false
+  xy: 189, 809
+  size: 178, 149
+  orig: 178, 149
+  offset: 0, 0
+  index: -1
+personagem_01_vitoria_detalhe
+  rotate: false
+  xy: 189, 960
+  size: 148, 43
+  orig: 148, 43
+  offset: 0, 0
+  index: -1
+personagem_01_vitoria_corpo
+  rotate: false
+  xy: 587, 1
+  size: 590, 760
+  orig: 590, 760
+  offset: 0, 0
+  index: -1
+personagem_01_vitoria_braço_01
+  rotate: false
+  xy: 587, 763
+  size: 334, 136
+  orig: 335, 145
+  offset: 1, 6
+  index: -1
+personagem_01_vitoria_mão_01
+  rotate: false
+  xy: 510, 901
+  size: 174, 88
+  orig: 174, 88
   offset: 0, 0
   index: -1
